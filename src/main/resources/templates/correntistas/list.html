@@ -6,7 +6,14 @@
 </head>
 
 <body>
-    <h1>Cadastro de Correntista</h1>
+    <h1>Correntistas Cadastrados</h1>
+    <hr />
+
+    <form th:action="@{/correntistas/form}" method="GET">
+        <button class="btn btn-primary" type="submit">Novo</button>
+    </form>
+    <br />
+
     <div th:text="${mensagem}" style="color: red"></div>
     <table border="1">
         <thead>

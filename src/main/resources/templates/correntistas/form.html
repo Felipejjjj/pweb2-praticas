@@ -10,7 +10,7 @@
     
     <div th:text="${mensagem}" style="color: red"></div>
 
-    <form th:action="@{/correntistas/save}" method="POST" th:object="${correntista}"> 
+    <form th:action="@{/correntistas}" method="POST" th:object="${correntista}"> 
         <input type="hidden" th:field="*{id}" />
         Nome: <input type="text" th:field="*{nome}" /><br /><br /> 
         Senha: <input type="password" th:field="*{senha}" /><br /><br /> 
