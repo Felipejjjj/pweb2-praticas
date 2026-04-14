@@ -43,4 +43,12 @@ public class CorrentistaRepository {
         return contaMaxId.getId() == null ? 1 : contaMaxId.getId() + 1;
     }
 
+    public Correntista findByEmail(String email) {
+        return repositorio.values().stream()
+                .filter(c -> c.getEmail() != null && c.getEmail().equalsIgnoreCase(email))
+                .findFirst()
+                .orElse(null);
+
+    }
+
 }

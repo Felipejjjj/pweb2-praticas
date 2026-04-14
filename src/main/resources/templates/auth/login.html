@@ -1,0 +1,24 @@
+<html xmlns:th="www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/auth.css}" />
+    <link rel="icon" th:href="@{/imagens/favicon.ico}" type="image/x-icon" />
+</head>
+
+<body>
+    <h1>Login</h1>
+
+    <p th:if="${erro}" th:text="${erro}" style="color:red;"></p>
+
+    <form class="form-signin" th:action="@{/auth/login}" method="POST" th:object="${correntista}">
+        <input type="hidden" th:field="*{id}" />
+        Email: <input type="text" th:field="*{email}" /><br /><br />
+        Senha: <input type="password" th:field="*{senha}" /><br /><br />
+        <input type="submit" value="Login" />
+    </form>
+</body>
+
+</html>
